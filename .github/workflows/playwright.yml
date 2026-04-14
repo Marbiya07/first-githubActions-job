@@ -20,8 +20,10 @@ jobs:
       run: npm ci
     - name: Update apt cache
       run: sudo apt-get update && sudo apt-get upgrade -y
+    - name: Install system dependencies
+      run: sudo apt-get install -y libffi8 libx264-165 libasound2 libxss1 libgtk-3-0 libgbm1 libxkbcommon0
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
