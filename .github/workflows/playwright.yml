@@ -23,7 +23,7 @@ jobs:
     - name: Install system dependencies
       run: sudo apt-get install -y libffi8 libx264-165 libasound2 libxss1 libgtk-3-0 libgbm1 libxkbcommon0
     - name: Install Playwright Browsers
-      run: npx playwright install
+      run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
