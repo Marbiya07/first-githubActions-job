@@ -7,9 +7,9 @@
     "tests:headed": "npx playwright test",
     "tests:headless": "npx playwright test --headless",
     "test:specific:headless": "npx playwright test --grep @google",
-    "test:specific:headed": "npx playwright test --headed --grep @google",
-    "test:tag:headless": "npx playwright test --grep @wip",
-    "test:tag:headed": "npx playwright test --headed --grep @custom-fixture",
+    "test:specific:headed": "npx playwright test --grep environment-variables.spec.js",
+    "test:tag:headless": "npx playwright test --headless --grep @wip",
+    "test:tag:headed": "npx playwright test --grep @custom-fixture",
     "test-smoke": "npx playwright test --grep @smoke",
     "report": "npx playwright show-report"
   },
