@@ -1,6 +1,11 @@
 name: Playwright Tests
 
 on:
+  push:
+    branches: 
+        - main
+        - master
+        - develop
   pull_request:
     branches: 
         - main
@@ -13,7 +18,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: macos-latest # Virtual Machine (macos-latest, windows-latest, ubuntu-latest etc.)
+    runs-on: ubuntu-latest # Virtual Machine (macos-latest, windows-latest, ubuntu-latest etc.)
     permissions:
       contents: write
 
@@ -37,12 +42,11 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       # configuring environment variables Example:
-    # - name: Configure environment variables from secrets
-    #    run: |
-    ##     echo "PRACTICE_USERNAME=${{ secrets.PRACTICE_USERNAME }}" >> .env
-    #      echo "PRACTICE_PASSWORD=${{ secrets.PRACTICE_PASSWORD }}" >> .env
-    #      echo "FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=${{ secrets.FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 }}" >> .env
-    #      echo "ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=${{ secrets.ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION }}" >> .env
+      - name: Configure environment variables from secrets
+        run: |
+          echo "PRACTICE_USERNAME=${{ secrets.PRACTICE_USERNAME }}" >> .env
+          echo "PRACTICE_PASSWORD=${{ secrets.PRACTICE_PASSWORD }}" >> .env
+          
 
       # Running tests with Playwright
       - name: Run Playwright tests
