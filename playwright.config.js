@@ -29,7 +29,7 @@ export default defineConfig({
     screenshot: { mode: "on" },
     video: "retain-on-failure",
     //video: {mode: 'retain-on-failure', size: {width: 1920, height: 1080} },
-    //executablePath: "/Applications/Firefox.app/Contents/MacOS/firefox",
+    headless: false,
   },
 
   /* Configure projects for major browsers */
