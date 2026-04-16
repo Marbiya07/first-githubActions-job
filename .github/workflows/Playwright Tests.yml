@@ -18,7 +18,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest # Virtual Machine (macos-latest, windows-latest, ubuntu-latest etc.)
+    runs-on: macos-latest # Virtual Machine (macos-latest, windows-latest, ubuntu-latest etc.)
     permissions:
       contents: write
 
