@@ -38,8 +38,8 @@ jobs:
         run: npm ci
 
       # Install Playwright Chromium Browser
-      - name: Install Playwright Chrome
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
 
       # configuring environment variables Example:
       - name: Configure environment variables from secrets
